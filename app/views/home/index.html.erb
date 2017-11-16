@@ -1,2 +1,67 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="socials">
+  <div class="social-col">
+    <a href="https://www.instagram.com/burningvan" class="icon-15 instagram" title="Instagram">
+      <%= image_tag 'insta.svg', class: 'social-icon' %>
+    </a>
+  </div>
+  <div class="social-col">
+    <a href="https://www.github.com/jarblz" class="icon-13 github" title="GitHub">
+      <%= image_tag 'git.svg', class: 'social-icon'%>
+    </a>
+  </div>
+  <div class="social-col">
+    <a href="mailto:jaredables@gmail.com?subject=Hi there!&body=Hi, I looked at your site, and.." class="icon-8 email" title="Email">
+      <%= image_tag 'mail.svg', class: 'social-icon' %>
+    </a>
+  </div>
+</div>
+<div class="work" id="work">
+  <div class="container">
+    <div class="section-heading">
+      Recent Work
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <a href="https://Trailmonkeez.com">
+          <div class="card">
+            <div class="main-image">
+              <%= image_tag "logo_blue.png" %>
+            </div>
+            <div class="image-caption">
+              <div class="work-title">
+                Trailmonkeez
+              </div>
+              <div class="work-description">
+                An educational shopping service for curious little ones.
+                <div class="skills">
+                  Making Chief Technology decisions, Rails, Frontend Design, XLS parsing, Shopify, frontend Javascript, Mobile Responsiveness
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-sm-6">
+        <a href="https://TropicalData.org">
+          <div class="card">
+            <div class="main-image">
+              <%= image_tag "td.png" %>
+            </div>
+            <div class="image-caption">
+              <div class="work-title">
+                Tropical Data
+              </div>
+              <div class="work-description">
+                A global health app that helps medical professionals track and eliminate devistating NTDs.
+                <div class="skills">
+                  Rails, Frontend Javascript, Google Maps API, PostGIS, Advanced SQL, Caching, Query Optimization, Multiple Databases
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
