@@ -1,4 +1,4 @@
-require 'pry'
+# require 'pry'
 module MergeSort
   module ClassMethods
     def self.merge(left_sorted, right_sorted)
