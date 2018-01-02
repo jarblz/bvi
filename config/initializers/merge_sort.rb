@@ -34,7 +34,7 @@ module MergeSort
 
 
     def self.other_thing
-      binding.pry
+      # binding.pry
     end
 
   end
