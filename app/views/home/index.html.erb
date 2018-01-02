@@ -65,3 +65,64 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="skills" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content chart-home">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h2 class='skills-header'>experience breakdown</h3>
+      <div id="chart-section"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  $('#skills').on('shown.bs.modal', function (e) {
+    var chart = c3.generate({
+      bindto: '#chart-section',
+      data: {
+        columns: [
+          ['data1', 60],
+          ['data2', 25],
+          ['data3', 8],
+          ['data4', 4],
+          ['data5', 3],
+        ],
+        names: {
+          data1: 'Rails/Rspec/Backend',
+          data2: 'Javascript/Jquery/CSS',
+          data3: 'Data Science/Ecommerce',
+          data4: 'Project Management',
+          data5: 'Product Development/User Discovery',
+        },
+        colors: {
+          data1: '#ff0100',
+          data2: '#106022',
+          data3: '#0000ff',
+          data3: '#AA8439',
+          data4: '#2E4372',
+          data5: '#ff7400',
+        },
+        type : 'donut',
+      },
+      // legend: {
+      //   show: false,
+      // },
+      tooltip: {
+        position: function (data, width, height, element) {
+          // debugger;
+          // console.log(`mouse-element: ${d3.mouse(element)[1]}`)
+          // console.log(`x: ${parseInt(element.getAttribute("x"))}`)
+          // console.log(`y: ${parseInt(element.getAttribute("y"))}`)
+          return {top: d3.mouse(element)[1]+150, left: d3.mouse(element)[0]+150};
+        }
+      },
+      donut: {
+      }
+    });
+
+  });
+
+
+</script>

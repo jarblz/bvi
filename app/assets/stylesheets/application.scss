@@ -1,4 +1,5 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+//= require_tree .
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -80,6 +81,7 @@ $maroon: #680000;
 
     a {
       color: white;
+      padding-right: 12px;
       cursor: pointer;
     }
   }
@@ -253,4 +255,30 @@ $maroon: #680000;
       }
     }
   }
+}
+.chart-home {
+  padding: 20px 2%;
+  background-color: rgba(104, 0, 0, 0.95)
+}
+
+.c3-legend-item {
+  font-size: 14px;
+  font-family: publica reg;
+}
+
+.skills-header {
+  display: table;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: black;
+  font-family: publica reg;
+
+}
+.close {
+  opacity: 0.5;
+  font-size: 36px;
+  position: absolute;
+  right: 3%;
+  top: 4px;
 }
