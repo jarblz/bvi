@@ -34,9 +34,60 @@ module MergeSort
 
 
     def self.other_thing
-      # binding.pry
+      puts 'stuff'
     end
 
+    # ================================
+    # * Vending machine * 15 minutes * failed TopTal interview
+    # ================================
+    #
+    #
+    # A vending machine has the following denominations:
+    # 1c, 5c, 10c, 25c, 50c, and $1.
+    # Your task is to write a program that will be used in a
+    # vending machine to return change.
+    # Assume that the vending machine will always want to return
+    # the least number of coins or notes.
+    # Devise a function getChange(M, P)
+    # where M is how much money was inserted into
+    # the machine and P the price of
+    # the item selected, that returns an
+    # array of integers representing
+    # the number of each denomination
+    # to return.
+    #
+    # Example:
+    # getChange(5, 0.99) should return [1,0,0,0,0,4]
+  #
+  #
+  #   def self.get_change(money, price)
+  #     coins = [100,50,25,10,5,1]
+  #     cents = (price*100)
+  #     remainder = money*100-cents
+  #     returned_coins = Hash.new
+  #     coins.each do |coin|
+  #       loop do
+  #         puts coin
+  #         puts remainder
+  #         if remainder%coin == 0
+  #           if !returned_coins[coin]
+  #             returned_coins[coin] = 1
+  #             remainder -= coin
+  #             puts remainder
+  #           else
+  #             returned_coins[coin] += 1
+  #             remainder -= coin
+  #           end
+  #         else
+  #
+  #           break
+  #         end
+  #       end
+  #     end
+  #     values = returned_coins.map { |k,v| v}
+  #     return values.reverse
+  #
+  #   end
   end
 
 end

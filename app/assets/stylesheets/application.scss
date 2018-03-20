@@ -63,6 +63,7 @@ $maroon: #680000;
     top: 55px;
     font-size: 22px;
     width: 50%;
+    z-index: 2;
     @media(max-width: 400px) {
       width: 70%;
     }
@@ -181,7 +182,6 @@ $maroon: #680000;
 
     .social-icon {
       width: 100px;
-      color: $maroon;
       display: table;
       margin: auto;
       @media(max-width: 400px) {
@@ -230,12 +230,56 @@ $maroon: #680000;
     background: white;
     border-radius: 5px;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    -webkit-transition: box-shadow 300ms linear;
+    -moz-transition: box-shadow 300ms linear;
+    -o-transition: box-shadow 300ms linear;
+    -ms-transition: box-shadow 300ms linear;
+    transition: box-shadow 300ms linear;
+
+    &:hover {
+      box-shadow: inset 0 2px 20px 2px $red,
+      inset 0 -10px 10px -10px $red;
+    }
+  }
+  .col-sm-6{
+    .card {
+      @media(min-width: 992px){
+        min-height: 360px;
+      }
+      @media(max-width: 991px){
+        min-height: 390px;
+      }
+      @media(max-width: 767px){
+        min-height: unset;
+      }
+    }
   }
   .main-image {
     padding-bottom: 10px;
     display: table;
     margin: auto;
+    &.circle {
+      img {
+        border-radius: 50%;
+      }
+    }
+    img {
+      width: 60%;
+      display: table;
+      margin: auto;
+
+    }
+  }
+  .col-sm-12 {
+    .main-image{
+      &.circle {
+        width: 100%;
+      }
+      img {
+        width: 30%;
+      }
+    }
   }
   .image-caption {
     font-size: 22px;
