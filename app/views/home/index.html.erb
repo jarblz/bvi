@@ -1,7 +1,9 @@
 <div class="socials">
   <div class="social-col">
     <a href="https://www.instagram.com/burningvan" class="icon-15 instagram" title="Instagram">
-      <%= image_tag 'insta.svg', class: 'social-icon' %>
+      <%#= render 'insta.svg', class: 'social-icon' %>
+      <%= inline_svg "insta.svg", class: 'social-icon' %>
+
     </a>
   </div>
   <div class="social-col">
@@ -94,10 +96,10 @@
                 Third World Mapping Geometry Prototype
               </div>
               <div class="work-description">
-                This is a protoype that I built for the <a href="http://www.who.int/">World Health Organization</a>.
+                This is a protoype that I built for the <a href="http://www.who.int/" style="color: blue">World Health Organization</a>.
                 It renders district geometries shaded based on endimicity of disease based on the selected country.
                 This app had to work on 2G, which is challenging when you are sending such a large payload in order to render all the verticies.
-                I optimized the rendering of said geometries using a <a href="https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm">spatial smoothing algorithm</a>.
+                I optimized the rendering of said geometries using a <a href="https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm" style="color: blue">spatial smoothing algorithm</a>.
                 <div class="skills">
                   Rails, Frontend Javascript, Google Maps API, PostGIS, Caching, Query Optimization, JSON payload optimization, Advanced Google Maps API, Large JSON file parsing, UX
                 </div>
@@ -121,7 +123,6 @@
 </div>
 
 <script>
-
   $('#skills').on('shown.bs.modal', function (e) {
     var chart = c3.generate({
       bindto: '#chart-section',
@@ -168,5 +169,31 @@
 
   });
 
+  var $logo = $('.logo');
+  var $logo_holder = $('.logo-holder');
+  var $logo_image = $('.logo-brand');
+  var $window = $(window);
+
+  $window.scroll(function(){
+    var window_height = $window.height();
+    var window_top_position = $window.scrollTop();
+    var window_bottom_position = (window_top_position + window_height);
+    var element_height = $logo.outerHeight();
+    if (window_top_position >= 60){
+      $logo_image.addClass('sticky')
+    } else {
+      $(".scroll-actions").slideUp("fast")
+      $logo_image.removeClass('sticky')
+    }
+  });
+
+  $window.trigger('scroll');
+  $(document).click(function(e) {
+    if($(e.target).attr('class')=="logo-brand sticky"){
+      $(".scroll-actions").slideToggle("fast")
+    } else {
+      $(".scroll-actions").slideUp("fast")
+    }
+  });
 
 </script>

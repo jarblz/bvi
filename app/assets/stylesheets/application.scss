@@ -1,3 +1,4 @@
+
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 //= require_tree .
 @import "bootstrap-sprockets";
@@ -16,6 +17,10 @@ $maroon: #680000;
   font-family: publica reg;
   min-height: 1000px;
   background: $maroon;
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 
 .invis-home {
@@ -35,49 +40,91 @@ $maroon: #680000;
   }
 
   .logo {
+    display: inline-block;
+    position: fixed;
+    width: 50%;
+    float: left;
+    top: 7px;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+    z-index: 2;
+
     .logo-brand {
       width: 130px;
+      -webkit-transition: all 300ms ease;
+      -moz-transition: all 300ms ease;
+      -o-transition: all 300ms ease;
+      transition: all 300ms ease;
+
       @media(max-width: 467px) {
         width: 90px;
       }
       @media(max-width: 400px) {
         width: 67px;
       }
+      &.sticky {
+        position: relative;
+        width: 80px;
+        top: 10px;
+        left: 0px;
+        border: solid $red 4px;
+        border-radius: 28%;
+        background: $maroon;
+        opacity: .9;
+        cursor: pointer;
+      }
     }
-    display: inline-block;
-    position: relative;
-    width: 50%;
-    float: left;
-    top: 7px;
+    .logo-holder{
+      border: none;
+      -webkit-transition: all 300ms ease;
+      -moz-transition: all 300ms ease;
+      -o-transition: all 300ms ease;
+      transition: all 300ms ease;
+    }
     @media(max-width: 400px) {
       width: 30%;
       top: 4px
     }
   }
+  .scroll-actions{
+    position: relative;
+    right: -1px;
+    top: 15px;
+    z-index: 2;
+    border: solid $red 3px;
+    border-radius: 8px;
+    padding: 5px 10px;
+    background: $maroon;
+    width: auto;
+    margin-left: 0%;
+    display: none;
+    width: 142px;
+    a {
+      padding-right: 12px;
+      font-size: 20px;
+      color: #ccc;
+    }
+  }
+
   .actions {
-    text-align: center;
     display: inline-block;
     position: relative;
     text-align: right;
-    float: left;
-    top: 55px;
+    float: right;
+    top: 60px;
     font-size: 22px;
-    width: 50%;
     z-index: 2;
-    @media(max-width: 400px) {
-      width: 70%;
-    }
-
     font-family: publica reg;
     color: white;
-    padding-right: 4%;
     @media(max-width: 467px) {
       top: 35px;
-    }
-
-    @media(max-width: 467px) {
-      top: 22px;
       font-size: 18px;
+    }
+    @media(max-width: 400px) {
+      width: 70%;
+      top: 22px;
     }
 
     a {
@@ -92,6 +139,7 @@ $maroon: #680000;
     position: relative;
     top: -250px;
     left: 8%;
+    z-index: 1;
     @media(max-width: 1160px) {
       top: -135px;
     }
@@ -102,7 +150,10 @@ $maroon: #680000;
       left: 2%;
       top: -30px;
     }
-    @media(max-width: 400px) {
+    @media(max-width: 574px) {
+      top: 0px;
+    }
+    @media(max-width: 430px) {
       left: -7%;
       top: -30px;
       width: 108%;
@@ -112,16 +163,16 @@ $maroon: #680000;
   }
   .greeting {
     position: relative;
-    left: -25%;
+    display: table;
     top: 99px;
     color: white;
     font-family: publica reg;
     display: table;
     margin: auto;
+    padding-left: 22%;
     text-align: center;
-    @media(max-width: 755px) {
-      left: -29%;
-      top: 77px;
+    @media(max-width: 565px) {
+      padding-left: 28%;
     }
     @media(max-width: 467px) {
       top: 62px;
@@ -134,19 +185,19 @@ $maroon: #680000;
 
     .header {
       font-size: 48px;
-      @media(max-width: 610px) {
+      @media(max-width: 638px) {
         font-size: 32px;
       }
       @media(max-width: 467px) {
         font-size: 28px;
       }
-      @media(max-width: 400px) {
+      @media(max-width: 413px) {
         font-size: 24px;
       }
     }
     .caption {
       font-size: 17px;
-      @media(max-width: 400px) {
+      @media(max-width: 413px) {
         font-size: 12px;
       }
     }
@@ -171,22 +222,28 @@ $maroon: #680000;
   height: 120px;
   background: $red;
   display: block;
+  @media(max-width: 610px) {
+    height: 85px;
+  }
   .social-col {
     position: relative;
-    top: 5px;
     width: 32%;
     display: inline-block;
-    @media(max-width: 400px) {
-      top: 18px;
-    }
+    height: 100%;
 
     .social-icon {
       width: 100px;
       display: table;
       margin: auto;
-      @media(max-width: 400px) {
+      margin-top: 10px;
+      @media(max-width: 610px) {
         width: 80px;
+        margin-top: 8px;
+        width: 70px
       }
+    }
+    .icon-components {
+      fill: $maroon;
     }
   }
 }
